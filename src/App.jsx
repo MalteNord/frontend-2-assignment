@@ -1,7 +1,7 @@
 function App(){
   return (
     <div>
-      Webshop
+      Webshop - Grupp 10
     </div>
   )
 }
