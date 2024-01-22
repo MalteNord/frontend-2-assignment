@@ -1,4 +1,4 @@
-function App(){
+ function App(){
   return (
     <div>
       Webshop - Grupp 10
@@ -7,6 +7,3 @@ function App(){
 }
 
 export default App;
-
-
-hej
