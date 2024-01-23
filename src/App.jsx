@@ -1,8 +1,15 @@
+import Header from "./components/header";
+
+
  function App(){
   return (
+    <>
+    <Header />
     <div>
-      Webshop - Grupp 10
+      
     </div>
+    </>
+
   )
 }
 
