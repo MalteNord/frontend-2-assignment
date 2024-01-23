@@ -1,4 +1,5 @@
 import Header from "./components/header";
+import "./index.css"
 
 
  function App(){
@@ -6,7 +7,7 @@ import Header from "./components/header";
     <>
     <Header />
     <div className='font-poppins'>
-      hejsan
+      <p>Webbshop grupp 10.</p>
     </div>
     </>
 
