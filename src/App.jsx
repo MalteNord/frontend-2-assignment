@@ -5,8 +5,8 @@ import Header from "./components/header";
   return (
     <>
     <Header />
-    <div>
-      
+    <div className='font-poppins'>
+      hejsan
     </div>
     </>
 
