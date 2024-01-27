@@ -1,4 +1,8 @@
+import React from "react";
 import Header from "./components/header";
+import About from "./components/about";
+import Footer from "./components/footer";
+
 import "./index.css"
 
 
@@ -6,12 +10,10 @@ import "./index.css"
   return (
     <>
     <Header />
-    <div className='font-poppins'>
-      <p>Webbshop grupp 10.</p>
-    </div>
+    <Footer />
     </>
 
-  )
+  );
 }
 
 export default App;
