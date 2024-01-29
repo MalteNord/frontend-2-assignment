@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Header(){
     return(
 <header>
-    <nav className="bg-cyan border-gray-200 px-4 py-4">
+    <nav className="font-poppins bg-cyan border-gray-200 px-4 py-4">
     <div className="text-2xl">
         <div className="flex justify-center">
                 <ul className="flex space-x-8">
