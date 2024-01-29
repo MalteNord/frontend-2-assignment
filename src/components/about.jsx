@@ -8,13 +8,13 @@ return(
  <h1 className="text-3xl">Om oss</h1>
  <div className="mt-2">
  <p className="text-lg">
-Välkommen till [Din TV-Butiksnamn], din Destination för Kvalitativa TV-upplevelser!
+Välkommen till TV-Specialisterna, din Destination för Kvalitativa TV-upplevelser!
 </p>
  </div>
 <div className="mt-2">
 <p>
 
-Vi på [Din TV-Butiksnamn] delar en passion för enastående bild- och ljudkvalitet. Vår onlinebutik är skapad för att vara din ultimata källa för toppmoderna TV-skärmar, och vi är stolta över att erbjuda produkter som tar din underhållning till nästa nivå.
+Vi på TV-Specialisterna delar en passion för enastående bild- och ljudkvalitet. Vår onlinebutik är skapad för att vara din ultimata källa för toppmoderna TV-skärmar, och vi är stolta över att erbjuda produkter som tar din underhållning till nästa nivå.
 
 <strong>
 <p className="text-lg mt-2">Vår Passion</p>
@@ -36,7 +36,7 @@ Vi brinner för att förvandla ditt vardagsrum till en biografisk upplevelse. Oa
 </strong>
 Vi strävar efter att vara din främsta destination för att hitta den perfekta TV-skärmen som matchar dina unika behov och önskemål. Genom att erbjuda en kombination av högkvalitativa produkter och förstklassig kundservice strävar vi efter att vara din pålitliga partner för alla dina TV-behov.
 <p className="text-lg mt-2">
-Tack för att du väljer [Din TV-Butiksnamn] som din förtroendeingivande plats för TV-skärmar. Vi ser fram emot att vara en del av ditt hemmabioäventyr!
+Tack för att du väljer TV-Specialisterna som din förtroendeingivande plats för TV-skärmar. Vi ser fram emot att vara en del av ditt hemmabioäventyr!
 </p>
 
 </p>

@@ -7,6 +7,7 @@ import Contact from "./components/contact";
 import Products from "./components/products";
 import Cart from "./components/cart";
 import Checkout from "./components/checkout";
+import Home from "./components/home";
 import "./index.css"
 
 
@@ -14,13 +15,14 @@ import "./index.css"
   return (
     <>
     <Header />
-    <Footer />
     <Router>
       <Routes>
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />}/>
         <Route exact path="/contact" element={<Contact />}/>
       </Routes>
     </Router>
+    <Footer />
     </>
 
   );
