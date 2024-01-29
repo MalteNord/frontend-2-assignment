@@ -19,7 +19,7 @@ Vi på TV-Specialisterna delar en passion för enastående bild- och ljudkvalite
 <strong>
 <p className="text-lg mt-2">Vår Passion</p>
 </strong>
-Vi brinner för att förvandla ditt vardagsrum till en biografisk upplevelse. Oavsett om du letar efter den senaste Smart-TV:n, en imponerande 4K-skärm eller en specialiserad gaming-TV, har [Din TV-Butiksnamn] allt du behöver för att skapa den perfekta TV-upplevelsen.
+Vi brinner för att förvandla ditt vardagsrum till en biografisk upplevelse. Oavsett om du letar efter den senaste Smart-TV:n, en imponerande 4K-skärm eller en specialiserad gaming-TV, har TV-Specialisterna allt du behöver för att skapa den perfekta TV-upplevelsen.
 
 <strong>
     <p className="text-lg mt-2">Varför Välja Oss?</p>
