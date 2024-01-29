@@ -1,14 +1,12 @@
 import React from "react";
 import "../index.css"
 
-function Footer(){
+function Contact(){
     return(
         <>
-        <footer>
-
-        </footer>
+        
         </>
-    );
+    )
 }
 
-export default Footer;
+export default Contact;
