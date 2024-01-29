@@ -5,7 +5,8 @@ import About from "./components/about";
 import Footer from "./components/footer";
 import Contact from "./components/contact";
 import Products from "./components/products";
-
+import Cart from "./components/cart";
+import Checkout from "./components/checkout";
 import "./index.css"
 
 
