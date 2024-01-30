@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css"
+import Products from "./products";
 
 function Home(){
     return(
