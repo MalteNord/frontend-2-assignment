@@ -1,12 +1,13 @@
 import React from "react";
-import "../index.css"
 
-function Products() {
+function Product(){
     return(
         <>
-        
+        <product>
+                               
+        </product>
         </>
     );
 }
 
-export default Products;
+export default Product;

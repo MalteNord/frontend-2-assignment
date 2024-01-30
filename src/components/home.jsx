@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css"
+import FeaturedProducts from "./featuredproducts";
 
 function Home(){
     return(
@@ -10,6 +11,7 @@ function Home(){
 </div>
 <div>
         <h1 className="text-3xl font-poppins mt-8 flex justify-center">Veckans nyheter!</h1>
+        <FeaturedProducts/>
                         {/* Här slänger vi in lite produkter */}
 </div>
 <div>
