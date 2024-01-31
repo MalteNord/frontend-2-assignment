@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css"
+import { Link } from "react-router-dom";
 
 function FAQ(){
     return(
@@ -66,7 +67,7 @@ function FAQ(){
 <strong>
     <p>9. Kan jag få teknisk support om jag har problem med min TV-skärm?</p>
 </strong>
-- Absolut! Kontakta vår kundtjänst för teknisk support via <a className="hover:underline" href="/contact"> kontakt</a>, och vårt team kommer att hjälpa dig att lösa eventuella problem.
+- Absolut! Kontakta vår kundtjänst för teknisk support via <Link to="/contact" className="hover:underline"><strong>kontakt</strong></Link>, och vårt team kommer att hjälpa dig att lösa eventuella problem.
 <br />
 <br />
 
