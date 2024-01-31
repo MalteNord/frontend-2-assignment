@@ -15,16 +15,17 @@ import "./index.css"
  function App(){
   return (
     <>
-    <Header />
+    
     <Router>
+    <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />}/>
         <Route exact path="/contact" element={<Contact />}/>
         <Route exact path="/faq" element={<FAQ />}/>
       </Routes>
+      <Footer />
     </Router>
-    <Footer />
     </>
 
   );
