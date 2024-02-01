@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css"
-import FeaturedProducts from "./featuredproducts";
+import FeaturedProducts from "../components/featuredproducts";
 
 function Home(){
     return(
