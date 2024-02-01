@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./card";
+import "../index.css"
+import axios from "axios";
 
 const FeaturedProducts = () => {
 
@@ -50,9 +52,27 @@ const FeaturedProducts = () => {
       },  
     ]
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try{
+          const data = await axios.get(process.env.VITE_STRAPI_API_URL+"/products", {
+            headers: {
+              Authorization: "bearer " + process.env.VITE_STRAPI_API_KEY,
+            }
+          });
+          console.log(data)
+        }catch(err){
+          console.log(err)
+        }
+      };
+      fetchData();
+    },[]);
+
     return (
         <div className="ml-12 mr-12 mb-12">
-            <div className="flex justify-center gap-12  ">
+            <div className="flex flex-wrap justify-center gap-12">
             {data.map(item=>(
                 <Card item={item} key={item.id}/>
             ))}

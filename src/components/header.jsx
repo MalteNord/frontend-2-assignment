@@ -15,19 +15,18 @@ function Header(){
                         <Link to="/">Hem</Link>
                     </li>
                     <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
-                        <Link to="/products/:id">Våra Produkter</Link>
+                        <Link to="/products/0">Våra Produkter</Link>
 
                     </li>
                     <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
                         <Link to="/about"> Om oss</Link>
                     </li>
                     <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
-                        <Link to="/contact">Kontakt </Link>
+                        <Link to="/contact">Kontakt</Link>
 
                     </li>
                     
                 </ul>
-
 
             </div>
     </div>

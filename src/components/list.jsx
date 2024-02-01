@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./card";
+import "../index.css"
 
 const List = () => {
 
@@ -51,7 +52,7 @@ const List = () => {
       ]
     
       return (
-        <div>{data?.map(item=>(
+        <div className="flex content-between flex-wrap mx-12 p-12 gap-12 ">{data?.map(item=>(
             <Card item={item} key={item.id}/>
         ))}</div>
     )
