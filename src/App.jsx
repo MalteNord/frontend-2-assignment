@@ -28,6 +28,8 @@ import "./index.css"
         <Route exact path="/faq" element={<FAQ />}/>
         <Route exact path="/terms" element={<Terms />}/>
         <Route exact path="/returns" element={<Returns />}/>
+        <Route exact path="/cart" element={<Cart />}/>
+
       </Routes>
       <Footer />
     </Router>

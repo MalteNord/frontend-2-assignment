@@ -25,6 +25,10 @@ function Header(){
                         <Link to="/contact">Kontakt</Link>
 
                     </li>
+                    <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
+                        <Link to="/cart">Kundvagn</Link>
+
+                    </li>
                     
                 </ul>
 
