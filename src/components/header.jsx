@@ -10,12 +10,14 @@ function Header(){
     <nav className="font-poppins bg-cyan border-gray-200 px-4 py-4">
     <div className="text-2xl">
         <div className="flex justify-center">
-                <ul className="flex space-x-8">
-                    <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
+            <ul className="flex mr-80">
+            <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
                         <Link to="/">Hem</Link>
                     </li>
+            </ul>
+                <ul className="flex space-x-8">
                     <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
-                        <Link to="/products/0">Våra Produkter</Link>
+                        <Link to="/products/0">Produkter</Link>
 
                     </li>
                     <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
@@ -25,11 +27,13 @@ function Header(){
                         <Link to="/contact">Kontakt</Link>
 
                     </li>
-                    <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
+                    
+                </ul>
+                <ul className="flex ml-60">
+                <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
                         <Link to="/cart">Kundvagn</Link>
 
                     </li>
-                    
                 </ul>
 
             </div>
