@@ -47,7 +47,7 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-auto ">
+            <div className="flex-auto">
                 <List catId={catId} maxPrice={maxPrice} sort={sort}/>
             </div>
         </div>

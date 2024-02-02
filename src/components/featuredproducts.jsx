@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
 
     return (
         <div className="ml-12 mr-12 mb-12">
-            <div className="flex justify-center gap-12">
+            <div className="flex justify-center space-x-10">
             {data.map(item=>(
                 <Card item={item} key={item.id}/>
             ))}

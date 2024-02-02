@@ -7,7 +7,7 @@ const Card = ({item}) => {
     
     return (
         <Link to={`/product/${item.id}`}>
-        <div className="size-72">
+        <div className="">
             <div>
                 <img src={import.meta.env.VITE_STRAPI_UPLOAD_URL + item.attributes.Image?.data.attributes.url} alt="" />
             </div>

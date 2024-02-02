@@ -70,7 +70,7 @@ const List = () => {
     },[]);
     
       return (
-        <div className="flex content-between flex-wrap mx-12 p-12 gap-12 ">
+        <div className="flex flex-wrap justify-center">
           {data.map(item=>(
             <Card item={item} key={item.id}/>
         ))}</div>

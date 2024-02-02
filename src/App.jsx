@@ -11,6 +11,7 @@ import Home from "./pages/Home"
 import FAQ from "./pages/Faq";
 import Terms from "./pages/Terms";
 import Returns from "./pages/Returns";
+import Product from "./pages/Product";
 import "./index.css"
 
 
@@ -29,6 +30,7 @@ import "./index.css"
         <Route exact path="/terms" element={<Terms />}/>
         <Route exact path="/returns" element={<Returns />}/>
         <Route exact path="/cart" element={<Cart />}/>
+        <Route exact path="/product" element={<Product />}/>
       </Routes>
       <Footer />
     </Router>
