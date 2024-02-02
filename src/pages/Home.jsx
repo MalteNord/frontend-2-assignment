@@ -7,11 +7,12 @@ function Home(){
     return(
 <>
 <div>
-        <h1 className="text-3xl font-poppins mt-8 flex justify-center">Välkommen till TV-Specialisterna!</h1>
-        <p className="flex justify-center text-lg">Din Destination för Kvalitativa TV-upplevelser!</p>
+        <h1 className="text-3xl font-poppins mt-8 flex justify-center">Välkommen till TV-Specialisterna</h1>
+        <p className="flex justify-center text-lg">Din Destination för Kvalitativa TV-upplevelser</p>
 </div>
 <div>
-        <h1 className="text-3xl font-poppins mt-8 flex justify-center">Veckans nyheter!</h1>
+        <h1 className="text-3xl font-poppins mt-8 flex justify-center">Veckans nyheter</h1>
+        <br />
         <FeaturedProducts/>
                         {/* Här slänger vi in lite produkter */}
 </div>
