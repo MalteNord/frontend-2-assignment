@@ -1,17 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Header from "./components/header";
+
 import About from "./pages/About";
 import Footer from "./components/footer";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
-import Cart from "./components/cart";
-import Checkout from "./pages/Checkout";
+
 import Home from "./pages/Home"
 import FAQ from "./pages/Faq";
 import Terms from "./pages/Terms";
 import Returns from "./pages/Returns";
 import Product from "./pages/Product";
+import Checkout from "./pages/Checkout";
 import "./index.css"
 
 
@@ -29,8 +30,10 @@ import "./index.css"
         <Route exact path="/faq" element={<FAQ />}/>
         <Route exact path="/terms" element={<Terms />}/>
         <Route exact path="/returns" element={<Returns />}/>
-        <Route exact path="/cart" element={<Cart />}/>
+        <Route exact path="/checkout" element={<Checkout />}/>
         <Route exact path="/product" element={<Product />}/>
+        
+
       </Routes>
       <Footer />
     </Router>
