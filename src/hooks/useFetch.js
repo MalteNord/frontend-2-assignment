@@ -1,22 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { makeRequest } from "../../makeRequest";
 
-const useFetch = async (url) => {
-
+const useFetch = (url) => {
     const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
 
     useEffect(() => {
       const fetchData = async () => {
-        try{
-          const res = await axios.get('http://localhost:1338/api/products?filters[IsNew][$eq]=true&populate=*',);
-          
+          const res = await makeRequest.get(url);
           setData(res.data.data)
-          console.log(res)
-        }catch(err){
-          console.log(err)
-        }
       };
       fetchData();
-    },[]);
-}
+    },[url]);
+
+    return {data}
+};
+
+export default useFetch

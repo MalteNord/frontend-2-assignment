@@ -3,12 +3,14 @@ import "../index.css"
 import FeaturedProducts from "../components/featuredproducts";
 import { Link } from "react-router-dom";
 
+
+
 function Home(){
     return(
+        
 <>
 <div>
         <h1 className="text-3xl font-poppins mt-8 flex justify-center">Välkommen till TV-Specialisterna</h1>
-        <h2 className="text-3xl font-poppins mt-4 flex justify-center">BACK TO SCHOOL REA</h2>
         <p className="flex justify-center text-lg mt-2">Din Destination för Kvalitativa TV-upplevelser</p>
 </div>
 <div>
@@ -21,11 +23,11 @@ function Home(){
         <h1 className="text-3xl font-poppins mt-8 flex justify-center">Alla våra produkter</h1>
         <ul className="flex justify-center space-x-6 mt-2 font-poppins">
             <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110">
-                <Link to="/products/1">Budget-skärmar</Link>
+                <Link to="/products/2">Budget-skärmar</Link>
             </li>
         
             <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110">
-                <Link to="/products/2">Standard-skärmar</Link>
+                <Link to="/products/1">Standard-skärmar</Link>
             </li>
 
             <li className="transition ease-in-out delay-100 hover:translate-y-1 hover:scale-110">
