@@ -35,9 +35,8 @@ import "./index.css"
         <Route exact path="/terms" element={<Terms />}/>
         <Route exact path="/returns" element={<Returns />}/>
         <Route exact path="/checkout" element={<Checkout />}/>
-        <Route exact path="/product" element={<Product />}/>
-        
-
+        <Route exact path="/product/:productId" element={<ProductDetail />}/>
+        <Route exact path="/cart" element={<Cart />}/>
       </Routes>
       <Footer />
     </Router>
