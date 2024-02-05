@@ -8,7 +8,6 @@ function Home(){
 <>
 <div>
         <h1 className="text-3xl font-poppins mt-8 flex justify-center">Välkommen till TV-Specialisterna</h1>
-        <h2 className="text-3xl font-poppins mt-4 flex justify-center">BACK TO SCHOOL REA</h2>
         <p className="flex justify-center text-lg mt-2">Din Destination för Kvalitativa TV-upplevelser</p>
 </div>
 <div>

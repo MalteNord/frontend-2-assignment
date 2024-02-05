@@ -10,6 +10,7 @@ export default {
     },
     extend: {
       colors: {
+        'main': '#94a3b8',
         'blue': '#1fb6ff',
         'purple': '#7e5bef',
         'pink': '#ff49db',

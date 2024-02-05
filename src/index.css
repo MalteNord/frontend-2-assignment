@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply whitespace-normal;
+layer base{
+  body{
+    @apply: main;
   }
 }

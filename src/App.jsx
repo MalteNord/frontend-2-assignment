@@ -11,7 +11,7 @@ import Home from "./pages/Home"
 import FAQ from "./pages/Faq";
 import Terms from "./pages/Terms";
 import Returns from "./pages/Returns";
-import Product from "./pages/Product";
+import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import "./index.css"
 
@@ -31,7 +31,8 @@ import "./index.css"
         <Route exact path="/terms" element={<Terms />}/>
         <Route exact path="/returns" element={<Returns />}/>
         <Route exact path="/checkout" element={<Checkout />}/>
-        <Route exact path="/product" element={<Product />}/>
+        <Route path="/product/:productId" element={<ProductDetail />} />
+
         
 
       </Routes>
