@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Footer from "./components/footer";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
+import Cart from "./components/cart";
+
 
 import Home from "./pages/Home"
 import FAQ from "./pages/Faq";
@@ -14,6 +16,8 @@ import Returns from "./pages/Returns";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
 import "./index.css"
+
+
 
 
  function App(){
@@ -32,6 +36,9 @@ import "./index.css"
         <Route exact path="/returns" element={<Returns />}/>
         <Route exact path="/checkout" element={<Checkout />}/>
         <Route exact path="/product" element={<Product />}/>
+        <Route exact path="/cart" element={<Cart />}/>
+        
+
         
 
       </Routes>
