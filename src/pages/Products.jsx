@@ -2,12 +2,27 @@ import React, { useState } from "react";
 import List from "../components/list";
 import { useParams } from "react-router-dom";
 import "../index.css"
+import useFetch from "../hooks/useFetch";
 
 const Products = () => {
 
     const catId = parseInt(useParams().id)
-    const [maxPrice,setMaxPrice] = useState(100000)
-    const [sort,setSort] = useState(null)
+    const [selectedCat, setSelectedCat] = useState([])
+
+    // const {data} = useFetch(`/products?&populate=*&[filters][Category][id][$eq]=${catId}`)
+    // console.log(data)
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        const isChecked = e.target.checked;
+
+        setSelectedCat(isChecked 
+            ? [...selectedCat, value] 
+            : selectedCat.filter(item => item !== value)
+        );    
+    };
+
+    console.log(selectedCat)
 
     return (
         <div className="px-10 flex mt-12 ml-12">
@@ -15,40 +30,21 @@ const Products = () => {
                 <div className="mb-8 ">
                     <h2 className="font-bold mb-5">Product Categories</h2>
                     <div className="mb-3">
-                        <input type="checkbox" id="1" value={1}/>
-                        <label htmlFor="1">Budget</label>
+                        <input type="checkbox" id="1" value={1} onChange={handleChange}/>
+                        <label htmlFor="1">Standard</label>
                     </div>
                     <div className="mb-3">
-                        <input type="checkbox" id="2" value={2}/>
-                        <label htmlFor="2">Standard</label>
+                        <input type="checkbox" id="2" value={2} onChange={handleChange}/>
+                        <label htmlFor="2">Budget</label>
                     </div>
                     <div className="mb-3">
-                        <input type="checkbox" id="3" value={3}/>
+                        <input type="checkbox" id="3" value={3} onChange={handleChange}/>
                         <label htmlFor="3">Premium</label>
-                    </div>
-                </div>
-                <div className="mb-8">
-                    <h2>Filter By Price</h2>
-                    <div className="mb-3">
-                        <span>0</span>
-                        <input type="range" min={0} max={100000} onChange={(e)=>setMaxPrice(e.target.value)} />
-                        <span>{maxPrice}</span>
-                    </div>
-                </div>
-                <div className="mb-8">
-                    <h2 className="font-bold mb-5 ">Sortera efter</h2>
-                    <div className="mb-3">
-                        <input type="radio" id="asc" value="asc" name="price" onChange={e=>setSort("asc")}/>
-                        <label htmlFor="asc">Billigaste</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="desc" value="desc" name="price" onChange={e=>setSort("desc)")}/>
-                        <label htmlFor="desc">Dyraste</label>
                     </div>
                 </div>
             </div>
             <div className="flex-auto">
-                <List catId={catId} maxPrice={maxPrice} sort={sort}/>
+                <List catId={catId} selectedCat={selectedCat}/>
             </div>
         </div>
     )
