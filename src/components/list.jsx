@@ -29,7 +29,7 @@ const List = ({catId, selectedCat, maxPrice}) => {
     
       return (
         <div className="flex flex-wrap justify-center">
-          {data?.map((item) => < Card item={item} key={item.id} />)}
+          {data?.map((item) => (<div className="w-1/3 p-2">< Card item={item} key={item.id} /></div>))}
         </div>
     )
 }
