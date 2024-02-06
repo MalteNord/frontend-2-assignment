@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../index.css"
 
+import { CartContext } from "../App";
+
 function NewCart(){
+    const cart = useContext(CartContext)
     return (
         <>
         <div>
         <div>
                 
         </div>
-            <div className="font-poppins border-solid border-2 border-sky-500 fixed right-0 mr-20 p-5">
+            <div className="font-poppins fixed justify-end">
                 <h3>Din Varukorg</h3>
-                
+                <div>
+                <button>-</button>
+                <button>+</button>
+                </div>
                 <p>Totalsumma</p>
             </div>
 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, createContext} from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Header from "./components/header";
 
@@ -18,14 +18,22 @@ import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import "./index.css"
 
-
+export const CartContext = createContext(null)
 
 
  function App(){
+const [cart, setCart] = useState([])
+
+const addProductToCart = (item) => {
+  setCart([...cart, item])
+  console.log("hej")
+}
+
   return (
     <>
     <Router>
-    <Header />
+      <CartContext.Provider value={{cart, setCart, addProductToCart}}>
+      <Header />
       <Routes>
       <Route exact path="/newcart" element={<NewCart />} />
         <Route exact path="/" element={<Home />} />
@@ -37,9 +45,9 @@ import "./index.css"
         <Route exact path="/returns" element={<Returns />}/>
         <Route exact path="/checkout" element={<Checkout />}/>
         <Route exact path="/product/:productId" element={<ProductDetail />}/>
-        <Route exact path="/cart" element={<Cart />}/>
       </Routes>
       <Footer />
+      </CartContext.Provider>
     </Router>
     </>
 

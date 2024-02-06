@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../index.css"
+import NewCart from '../components/newcart';
 
 const Checkout = () => {
   const [firstName, setFirstName] = useState('');
@@ -40,9 +41,11 @@ const Checkout = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    <>
+<div className='flex'>
+    <div className="flex-1 border container mt-8 ml-10">
       <h1 className="text-3xl font-poppins mb-4">Checkout</h1>
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="max-w-md">
         <div className="mb-4">
           <label htmlFor="firstName" className="block text-sm font-poppins text-gray-600">Namn</label>
           <input
@@ -105,6 +108,11 @@ const Checkout = () => {
 
       {}
     </div>
+    <div className='flex-1 '>
+    <NewCart />
+    </div>
+</div>
+    </>
   );
 }
 
