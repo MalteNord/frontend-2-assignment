@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
