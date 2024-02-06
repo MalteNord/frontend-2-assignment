@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Footer from "./components/footer";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
-import Cart from "./components/cart";
 import NewCart from "./components/newcart";
 
 
