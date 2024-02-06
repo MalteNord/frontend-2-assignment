@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState, useContext} from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../App";
@@ -21,7 +21,11 @@ const ProductDetail = () => {
     fetchProduct();
   }, [productId]);
 
+    const {addProductToCart} = useContext(CartContext);
 
+    const addProduct = () => {
+      addProductToCart(product);
+    }
 
   if (!product) {
     return <div>Laddar...</div>;
@@ -41,7 +45,7 @@ const ProductDetail = () => {
       <div className="mt-20">
         <ul className="flex justify-center space-x-10">
           <li>Översikt</li>
-          <button onClick={CartContext.addProductToCart} className="hover:underline">Lägg till i varukorg</button>
+          <button onClick={addProduct} className="hover:underline">Lägg till i varukorg</button>
         </ul>
       </div>
       <div className="flex justify-center mt-10">

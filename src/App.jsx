@@ -25,7 +25,7 @@ const [cart, setCart] = useState([])
 
 const addProductToCart = (item) => {
   setCart([...cart, item])
-  console.log("hej")
+  console.log("Added", {item})
 }
 
   return (
