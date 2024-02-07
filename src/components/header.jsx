@@ -1,11 +1,17 @@
 import "../index.css"
-import React from "react";
-
+import React, {useState} from "react";
+import ShoppingCart from "./ShoppingCart";
 import { Link } from 'react-router-dom';
+import App from "../App";
 
 
 function Header(){
+    // const [cartVisibility, setCartVisibility] = useState(false);
+    // const [productsInCart, setProducts] = useState([]);
     return(
+        <>
+        {/* <ShoppingCart visibility={cartVisibility} products={productsInCart}/> */}
+
 <header>
     <nav className="font-poppins px-4 py-4">
     <div className="text-2xl">
@@ -30,15 +36,14 @@ function Header(){
                 </ul>
                 <ul className="ml-80">
                 <li className="transition ease-in-out hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
-                        <Link to="/cart"><img className="size-10" src="src/assets/cart.png" alt="" /></Link>
+                        <Link to="/newcart"><img className="size-10" src="src/assets/cart.png" alt=""></img></Link>
                 </li>
                 </ul>
-
-
             </div>
     </div>
     </nav>
 </header>
+</>
     );
 };
 

@@ -6,8 +6,9 @@ const Card = ({item}) => {
 
     
     return (
+        <>
         <Link to={`/product/${item.id}`}>
-        <div className="">
+        <div>
             <div>
                 <img src={import.meta.env.VITE_STRAPI_UPLOAD_URL + item.attributes.Image?.data.attributes.url} alt="" />
             </div>
@@ -18,7 +19,8 @@ const Card = ({item}) => {
                 <h3>{item?.attributes.Price} SEK</h3>
             </div>
         </div>
-        </Link>
+            </Link>
+            </>
     )
 }
 

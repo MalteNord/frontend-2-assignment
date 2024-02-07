@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Header from "./components/header";
 
@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Cart from "./components/cart";
+import NewCart from "./components/newcart";
 
 
 import Home from "./pages/Home"
@@ -23,10 +24,10 @@ import "./index.css"
  function App(){
   return (
     <>
-    
     <Router>
     <Header />
       <Routes>
+      <Route exact path="/newcart" element={<NewCart />} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/products/:id" element={<Products />}/>
         <Route exact path="/about" element={<About />}/>
