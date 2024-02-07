@@ -4,9 +4,13 @@ import "../index.css";
 
 function Confirmation() {
   const { cart } = useContext(CartContext);
+
+  const totalPrice = cart.reduce((acc, product) => {
+    return acc + parseFloat(product.data.attributes?.Price);
+  }, 0);
   return (
     <>
-      <section className="h-screen py-12 sm:py-16 lg:py-20 overflow-y-auto">
+      <section className="h-max py-12 sm:py-16 lg:py-20 overflow-y-auto">
         <div className="font-poppins mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center">
             <h1 className="text-2xl">Tack för din beställning</h1>
@@ -52,6 +56,15 @@ function Confirmation() {
                     <p className="mx-0 mt-1 mb-0 text-lg text-gray-400">
                         Bekräftelse kommer på e-post!
                     </p>
+                    <div className="mt-6 flex items-center justify-between">
+                  <p className="text-sm font-medium text-gray-900">Total</p>
+                  <p className="text-2xl font-semibold text-gray-900">
+                    <span className="text-xs font-normal text-gray-400">
+                      SEK
+                    </span>{" "}
+                    {totalPrice.toFixed(2)}
+                  </p>
+                </div>
                   </div>
 
                 </div>

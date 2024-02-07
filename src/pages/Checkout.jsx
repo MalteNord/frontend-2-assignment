@@ -56,7 +56,7 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="flex ">
+      <div className="flex">
         <div className="flex-1 container mt-8 ml-20 rounded-3xl shadow-lg shadow-gray">
           <h1 className="text-3xl font-poppins mb-4 p-5">Checkout</h1>
             <form onSubmit={handleSubmit} className="max-w-md">

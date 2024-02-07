@@ -10,7 +10,7 @@ function CheckoutCart() {
   }, 0);
 
   return (
-    <section className="h-screen py-12 sm:py-16 lg:py-20 overflow-y-auto">
+    <section className="h-max py-12 sm:py-16 lg:py-20">
       <div className="font-poppins mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <h1 className="text-2xl">Varukorg</h1>

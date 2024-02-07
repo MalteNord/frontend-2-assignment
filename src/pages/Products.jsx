@@ -1,54 +1,53 @@
 import React, { useState } from "react";
 import List from "../components/list";
 import { useParams } from "react-router-dom";
-import "../index.css"
+import "../index.css";
 import useFetch from "../hooks/useFetch";
 
 const Products = () => {
+  const catId = parseInt(useParams().id);
+  const [selectedCat, setSelectedCat] = useState([]);
 
-    const catId = parseInt(useParams().id)
-    const [selectedCat, setSelectedCat] = useState([])
+  // const {data} = useFetch(`/products?&populate=*&[filters][Category][id][$eq]=${catId}`)
+  // console.log(data)
 
-    // const {data} = useFetch(`/products?&populate=*&[filters][Category][id][$eq]=${catId}`)
-    // console.log(data)
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
 
-    const handleChange = (e) => {
-        const value = e.target.value;
-        const isChecked = e.target.checked;
+    setSelectedCat(
+      isChecked
+        ? [...selectedCat, value]
+        : selectedCat.filter((item) => item !== value)
+    );
+  };
 
-        setSelectedCat(isChecked 
-            ? [...selectedCat, value] 
-            : selectedCat.filter(item => item !== value)
-        );    
-    };
+  console.log(selectedCat);
 
-    console.log(selectedCat)
-
-    return (
-        <div className="px-10 flex mt-12 ml-12">
-            <div className="flex-1 sticky top-12 h-full">
-                <div className="mb-8 ">
-                    <h2 className="font-bold mb-5">Product Categories</h2>
-                    <div className="mb-3">
-                        <input type="checkbox" id="1" value={1} onChange={handleChange}/>
-                        <label htmlFor="1">Standard</label>
-                    </div>
-                    <div className="mb-3">
-                        <input type="checkbox" id="2" value={2} onChange={handleChange}/>
-                        <label htmlFor="2">Budget</label>
-                    </div>
-                    <div className="mb-3">
-                        <input type="checkbox" id="3" value={3} onChange={handleChange}/>
-                        <label htmlFor="3">Premium</label>
-                    </div>
-                </div>
-            </div>
-            <div className="flex-auto">
-                <List catId={catId} selectedCat={selectedCat}/>
-            </div>
+  return (
+    <div className="px-10 flex mt-12 ml-12">
+      <div className="flex-1 sticky top-12 h-full">
+        <div className="mb-8 ">
+          <h2 className="font-bold mb-5">Product Categories</h2>
+          <div className="mb-3">
+            <input type="checkbox" id="1" value={1} onChange={handleChange} />
+            <label htmlFor="1">Standard</label>
+          </div>
+          <div className="mb-3">
+            <input type="checkbox" id="2" value={2} onChange={handleChange} />
+            <label htmlFor="2">Budget</label>
+          </div>
+          <div className="mb-3">
+            <input type="checkbox" id="3" value={3} onChange={handleChange} />
+            <label htmlFor="3">Premium</label>
+          </div>
         </div>
-    )
-}
- 
+      </div>
+      <div className="flex-auto ml-6">
+        <List catId={catId} selectedCat={selectedCat} />
+      </div>
+    </div>
+  );
+};
 
 export default Products;
