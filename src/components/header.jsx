@@ -32,7 +32,7 @@ function Header(){
                 </ul>
                 <ul className="ml-80">
                 <li className="transition ease-in-out hover:translate-y-1 hover:scale-110 hover:text-gray-dark">
-                        <Link to="/checkout"><img className="size-10" src="src/assets/cart.png" alt=""></img></Link>
+                        <Link to="/cart"><img className="size-10" src="src/assets/cart.png" alt=""></img></Link>
                 </li>
                 </ul>
             </div>
