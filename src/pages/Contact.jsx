@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mt-8 rounded-3xl shadow-lg shadow-gray p-5 ">
       <h2 className="text-3xl font-poppins mb-4">Kontakta oss</h2>
 
       <div className="font-poppins mb-6">

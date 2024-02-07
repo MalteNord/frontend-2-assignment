@@ -9,7 +9,7 @@ const Card = ({item}) => {
         <>
         <Link to={`/product/${item.id}`}>
         <div>
-            <div>
+            <div className="transition ease-in-out hover:translate-y-1 hover:scale-110 mb-5">
                 <img src={import.meta.env.VITE_STRAPI_UPLOAD_URL + item.attributes.Image?.data.attributes.url} alt="" />
             </div>
             <h2 className="text-base font-thin ">{item?.attributes.Title}</h2>

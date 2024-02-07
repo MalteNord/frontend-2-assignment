@@ -56,12 +56,12 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="flex">
-        <div className="flex-1 container mt-8 ml-20">
-          <h1 className="text-3xl font-poppins mb-4">Checkout</h1>
+      <div className="flex ">
+        <div className="flex-1 container mt-8 ml-20 rounded-3xl shadow-lg shadow-gray">
+          <h1 className="text-3xl font-poppins mb-4 p-5">Checkout</h1>
             <form onSubmit={handleSubmit} className="max-w-md">
               <div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="firstName"
                     className="block text-sm font-poppins text-gray-600"
@@ -77,7 +77,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="lastName"
                     className="block text-sm font-poppins text-gray-600"
@@ -93,7 +93,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="email"
                     className="block text-sm font-poppins text-gray-600"
@@ -110,7 +110,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="address"
                     className="block text-sm font-poppins text-gray-600"
@@ -126,7 +126,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="postalCode"
                     className="block text-sm font-poppins text-gray-600"
@@ -146,7 +146,7 @@ const Checkout = () => {
                 </div>
               </div>
               <div className="pt-10">                                 
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="creditCardNumber"
                     className="block text-sm font-poppins text-gray-600"
@@ -156,7 +156,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     placeholder="1234 5678 9123 4567"
-                    maxlength="19"
+                    maxLength="19"
                     id="creditCardNumber"
                     value={creditCardNumber}
                     onChange={handleCreditCardNumber}
@@ -164,7 +164,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 pl-5">
                   <label
                     htmlFor="creditCardOwner"
                     className="block text-sm font-poppins text-gray-600"
@@ -182,7 +182,7 @@ const Checkout = () => {
                   />
                 </div>
                 <div className="flex p-3 space-x-10">
-                  <div className="mb-4">
+                  <div className="mb-4 pl-5">
                     <div>
                     <label
                       htmlFor="creditCardDate"
@@ -210,7 +210,7 @@ const Checkout = () => {
                       />
                     </div>
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-4 pl-5">
                     <label
                       htmlFor="creditCardCVC"
                       className="block text-sm font-poppins text-gray-600"

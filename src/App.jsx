@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Footer from "./components/footer";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
-import Cart from "./components/cart";
 import CheckoutCart from "./components/checkoutCart";
 
 import Home from "./pages/Home";
@@ -16,6 +15,7 @@ import Returns from "./pages/Returns";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import "./index.css";
+import Confirmation from "./pages/confirmation";
 
 export const CartContext = createContext(null);
 
@@ -33,7 +33,7 @@ function App() {
         <CartContext.Provider value={{ cart, setCart, addProductToCart }}>
           <Header />
           <Routes>
-            <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/confirmation" element={<Confirmation />} />
             <Route exact path="/" element={<Home />} />
             <Route exact path="/products/:id" element={<Products />} />
             <Route exact path="/about" element={<About />} />

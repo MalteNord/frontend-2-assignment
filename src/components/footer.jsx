@@ -25,9 +25,6 @@ function Footer(){
             <Link to="/returns" className="hover:underline me-4 md:me-6">Returer</Link>
         </li>
         <li>
-            <Link to="/checkout" className="hover:underline me-4 md:me-6">Checkout</Link>
-        </li>
-        <li>
             <Link to="/contact" className="hover:underline">Kontakt</Link>
         </li>
 

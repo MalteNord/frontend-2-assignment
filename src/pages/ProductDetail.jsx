@@ -55,7 +55,7 @@ const ProductDetail = () => {
       <div className="mt-20">
         <ul className="flex justify-center space-x-10">
           <li>Översikt</li>
-          <button onClick={addProduct} className="hover:underline">
+          <button onClick={addProduct} className=" btn hover:underline hover:scale-105">
             Lägg till i varukorg
           </button>
         </ul>
