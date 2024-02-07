@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      name: 'produkt 1',
-      price: 10,
+      name: 'LogiTech 40" / 4K',
+      price: 8999,
       quantity: 1
     },
     {
       id: 2,
-      name: 'produkt 2',
-      price: 20,
-      quantity: 2
+      name: 'TCL 65" / 4K',
+      price: 14999,
+      quantity: 1
     },
-    {
-      id: 3,
-      name: 'produkt 3',
-      price: 30,
-      quantity: 3
-    }
+    
   ]);
 
   const handleIncrement = (itemId) => {
@@ -81,7 +77,7 @@ const Cart = () => {
         <div key={item.id} className="flex justify-between items-center mt-4">
           <div>
             <p className="font-semibold">{item.name}</p>
-            <p className="text-gray-600">${item.price}</p>
+            <p className="text-gray-600">SEK {item.price}</p>
           </div>
           <div className="flex items-center">
             <button
@@ -98,25 +94,27 @@ const Cart = () => {
               +
             </button>
           </div>
-          <p>${calculateItemTotal(item)}</p>
+          <p>SEK {calculateItemTotal(item)}</p>
         </div>
       ))}
 
       <div className="flex justify-between items-center mt-4">
         <p className="text-gray-600">Totalbelopp :</p>
-        <p className="text-xl font-semibold">${calculateTotal()}</p>
+        <p className="text-xl font-semibold">SEK {calculateTotal()}</p>
       </div>
 
       <button
         className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mt-4"
         onClick={handleEmptyCart}
       >
-        Kundvagn är tom 
+         
       </button>
 
-      <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-4">
-        Checkout 
-      </button>
+      <Link to="/checkout">
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-4">
+          Checkout 
+        </button>
+      </Link>
     </div>
   );
 };

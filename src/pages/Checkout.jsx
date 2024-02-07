@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import "../index.css"
 
 const Checkout = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [socialSecurityNumber, setSocialSecurityNumber] = useState('');
   const [deliveryOption, setDeliveryOption] = useState('standard');
+  const [paymentOption, setPaymentOption] = useState('creditCard');
+  const [personalNumber, setPersonalNumber] = useState('');
   const [cart, setCart] = useState([]);
 
   const handleFirstNameChange = (e) => {
@@ -21,12 +21,16 @@ const Checkout = () => {
     setPhoneNumber(e.target.value);
   };
 
-  const handleSocialSecurityNumberChange = (e) => {
-    setSocialSecurityNumber(e.target.value);
-  };
-
   const handleDeliveryOptionChange = (e) => {
     setDeliveryOption(e.target.value);
+  };
+
+  const handlePaymentOptionChange = (e) => {
+    setPaymentOption(e.target.value);
+  };
+
+  const handlePersonalNumberChange = (e) => {
+    setPersonalNumber(e.target.value);
   };
 
   const handleAddToCart = (item) => {
@@ -36,7 +40,22 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
+    // Perform form validation here
+    // ...
+
+    // Prepare the data to be submitted
+    const formData = {
+      firstName,
+      lastName,
+      phoneNumber,
+      deliveryOption,
+      paymentOption,
+      personalNumber,
+      cart,
+    };
+
+    // Submit the form data to your backend or process it further
+    console.log(formData);
   };
 
   return (
@@ -44,7 +63,7 @@ const Checkout = () => {
       <h1 className="text-3xl font-poppins mb-4">Checkout</h1>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
         <div className="mb-4">
-          <label htmlFor="firstName" className="block text-sm font-poppins text-gray-600">Namn</label>
+          <label htmlFor="firstName" className="block text-sm font-poppins text-gray-600">Förnamn</label>
           <input
             type="text"
             id="firstName"
@@ -77,18 +96,18 @@ const Checkout = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="socialSecurityNumber" className="block text-sm font-poppins text-gray-600">Personnummer</label>
+          <label htmlFor="personalNumber" className="block text-sm font-poppins text-gray-600">Personnummer</label>
           <input
             type="text"
-            id="socialSecurityNumber"
-            value={socialSecurityNumber}
-            onChange={handleSocialSecurityNumberChange}
+            id="personalNumber"
+            value={personalNumber}
+            onChange={handlePersonalNumberChange}
             className="mt-1 p-2 border rounded-md w-full"
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="deliveryOption" className="block text-sm font-poppins text-gray-600">Välj Leveranssätt</label>
+          <label htmlFor="deliveryOption" className="block text-sm font-poppins text-gray-600">Leveranssätt</label>
           <select
             id="deliveryOption"
             value={deliveryOption}
@@ -96,14 +115,27 @@ const Checkout = () => {
             className="mt-1 p-2 border rounded-md w-full"
             required
           >
-            <option value="standard">Standard Leverans</option>
-            <option value="express">Express Leverans</option>
+            <option value="standard">Standard</option>
+            <option value="express">Express</option>
           </select>
         </div>
-        <button type="submit" className="font-poppins bg-blue hover:bg-cyan text-white p-2 rounded-md">Beställ</button>
+        {/* ... */}
+        <div className="mb-4">
+          <label htmlFor="paymentOption" className="block text-sm font-poppins text-gray-600">Betalningsalternativ</label>
+          <select
+            id="paymentOption"
+            value={paymentOption}
+            onChange={handlePaymentOptionChange}
+            className="mt-1 p-2 border rounded-md w-full"
+            required
+          >
+            <option value="creditCard">Kreditkort</option>
+            <option value="bankTransfer">Banköverföring</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </div>
+        <button type="submit"className="font-poppins bg-blue hover:bg-cyan text-white p-2 rounded-md">Betala köp</button>
       </form>
-
-      {}
     </div>
   );
 }
