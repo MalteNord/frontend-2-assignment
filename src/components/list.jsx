@@ -34,7 +34,7 @@ const List = ({catId, selectedCat}) => {
     
       return (
         <div className="flex flex-wrap justify-center">
-          {data?.map((item) => (<div className="w-1/3 p-2" key={item.id}>< Card item={item} /></div>))}
+          {data?.map((item) => (<div className="w-1/3 p-4 border-b" key={item.id}>< Card item={item} /></div>))}
         </div>
     )
 }
