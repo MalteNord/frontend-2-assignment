@@ -27,10 +27,19 @@ function App() {
     console.log("Added", { item });
   };
 
+  const removeProductFromCart = (productId) => {
+    const updatedCart = cart.filter((item) => item.data.attributes?.id !== productId);
+    setCart(updatedCart);
+  };
+  
+  
+  
+  
+
   return (
     <>
       <Router>
-        <CartContext.Provider value={{ cart, setCart, addProductToCart }}>
+        <CartContext.Provider value={{ cart, setCart, addProductToCart, removeProductFromCart }}>
           <Header />
           <Routes>
           <Route exact path="/confirmation" element={<Confirmation />} />
