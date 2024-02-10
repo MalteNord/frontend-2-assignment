@@ -50,16 +50,6 @@ function App() {
       setCart([...cart, { ...item, quantity: -1 }]);
     }
   };
-
-  // const addProductAmount = (productId) => { 
-  //   const updatedCart = cart.filter((product) => product.data.id !== productId);
-  //   setCart(updatedCart);
-  // };
-
-  // const removeProductAmount = (productId) => { 
-  //   const updatedCart = cart.filter((product) => product.data.id !== productId);
-  //   setCart(updatedCart);
-  // };
   
   return (
     <>
