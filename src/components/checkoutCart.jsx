@@ -26,10 +26,10 @@ function CheckoutCart() {
                         console.log(product)
                         return (
                           <div key={index}>
-                            <div className="flex justify-end">
-                              <div>Quantity: {product.quantity}</div>
-                              <button onClick={() => removeProductFromCart(product)}>-</button>
-                              <button onClick={() => addProductToCart(product)}>+</button>
+                            <div className="flex justify-end space-x-10">
+                              <div>Antal: {product.quantity}</div>
+                              <button className="font-poppins bg-blue hover:bg-cyan text-white p-2 rounded-md" onClick={() => removeProductFromCart(product)}>-</button>
+                              <button className="font-poppins bg-blue hover:bg-cyan text-white p-2 rounded-md" onClick={() => addProductToCart(product)}>+</button>
                             </div>
                             <img
                               className="h-28 w-34 max-w-full rounded-lg object-cover"
