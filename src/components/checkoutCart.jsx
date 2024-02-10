@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { CartContext } from "../App";
 import { Link } from "react-router-dom";
 
 function CheckoutCart() {
+
   const { cart, removeProductFromCart, addProductToCart } = useContext(CartContext);
 
   const totalPrice = cart.reduce((acc, product) => {

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../index.css";
 import CheckoutCart from "../components/checkoutCart";
+import emailjs from '@emailjs/browser';
 
 
 const Checkout = () => {
+  const form = useRef();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
