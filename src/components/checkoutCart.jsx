@@ -3,7 +3,7 @@ import { CartContext } from "../App";
 import { Link } from "react-router-dom";
 
 function CheckoutCart() {
-  const { cart, addProductAmount, removeProductAmount } = useContext(CartContext);
+  const { cart, removeProductFromCart, addProductToCart } = useContext(CartContext);
 
   const totalPrice = cart.reduce((acc, product) => {
     return acc + parseFloat(product.data.attributes?.Price) * product.quantity;
@@ -23,20 +23,13 @@ function CheckoutCart() {
                   <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                     <div className="shrink-0 relative">
                       {cart.map((product, index) => {
+                        console.log(product)
                         return (
                           <div key={index}>
                             <div className="flex justify-end">
                               <div>Quantity: {product.quantity}</div>
-                              <button
-                                onClick={() =>
-                                  removeProductAmount(product.quantity--)
-                                }
-                              >
-                                <strong>-</strong>
-                                </button>
-                                <button onClick={() =>
-                                  addProductAmount(product.quantity++)
-                                }>+</button>
+                              <button onClick={() => removeProductFromCart(product)}>-</button>
+                              <button onClick={() => addProductToCart(product)}>+</button>
                             </div>
                             <img
                               className="h-28 w-34 max-w-full rounded-lg object-cover"

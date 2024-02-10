@@ -158,7 +158,7 @@ const Checkout = () => {
                     maxLength="19"
                     id="creditCardNumber"
                     pattern="[0-9]{13,16}"
-                    inputmode="numeric"
+                    inputMode="numeric"
                     value={creditCardNumber}
                     onChange={handleCreditCardNumber}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -195,7 +195,7 @@ const Checkout = () => {
                         type="text"
                         placeholder="MM/YY"
                         id="creditCardDateMonth"
-                        inputmode="numeric"
+                        inputMode="numeric"
                         value={creditCardDate}
                         onChange={handleCreditCardDate}
                         className="mt-1 p-2 border rounded-md w-full"
@@ -216,7 +216,7 @@ const Checkout = () => {
                       maxLength="3"
                       placeholder="XXX"
                       id="creditCardCVV"
-                      inputmode="numeric"
+                      inputMode="numeric"
                       value={creditCardCVV}
                       onChange={handleCreditCardCVV}
                       className="mt-1 p-2 border rounded-md w-full"

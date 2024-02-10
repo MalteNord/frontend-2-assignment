@@ -34,20 +34,37 @@ function App() {
     }
   };
 
-  const addProductAmount = (productId) => { 
-    const updatedCart = cart.filter((product) => product.data.id !== productId);
-    setCart(updatedCart);
+  const removeProductFromCart = (item) => {
+    const existingProductIndex = cart.findIndex((product) => product.data.id === item.data.id);
+  
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...cart];
+      if (updatedCart[existingProductIndex].quantity === 1){
+        setCart(updatedCart.filter((product) => product.data.id !== item.data.id))
+      }
+      else {
+        updatedCart[existingProductIndex].quantity -= 1;
+        setCart(updatedCart);
+      }
+    } else {
+      setCart([...cart, { ...item, quantity: -1 }]);
+    }
   };
 
-  const removeProductAmount = (productId) => { 
-    const updatedCart = cart.filter((product) => product.data.id !== productId);
-    setCart(updatedCart);
-  };
+  // const addProductAmount = (productId) => { 
+  //   const updatedCart = cart.filter((product) => product.data.id !== productId);
+  //   setCart(updatedCart);
+  // };
+
+  // const removeProductAmount = (productId) => { 
+  //   const updatedCart = cart.filter((product) => product.data.id !== productId);
+  //   setCart(updatedCart);
+  // };
   
   return (
     <>
       <Router>
-        <CartContext.Provider value={{ cart, setCart, addProductToCart, addProductAmount, removeProductAmount }}>
+        <CartContext.Provider value={{ cart, setCart, addProductToCart, removeProductFromCart }}>
           <Header />
           <Routes>
           <Route exact path="/confirmation" element={<Confirmation />} />

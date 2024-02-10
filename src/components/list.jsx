@@ -30,8 +30,6 @@ const List = ({catId, selectedCat}) => {
     if(selectedCat.includes("3")) stringBuilder = stringBuilder + '&[filters][Category][id][$eq]=3'
 
     const {data} = useFetch(stringBuilder)
-   
-    
       return (
         <div className="flex flex-wrap justify-center">
           {data?.map((item) => (<div className="w-1/3 p-4 border-b" key={item.id}>< Card item={item} /></div>))}
