@@ -3,7 +3,7 @@ import { CartContext } from "../App";
 import { Link } from "react-router-dom";
 
 function CheckoutCart() {
-  const { cart } = useContext(CartContext);
+  const { cart, removeProductFromCart } = useContext(CartContext);
 
   const totalPrice = cart.reduce((acc, product) => {
     return acc + parseFloat(product.data.attributes?.Price);
@@ -22,36 +22,51 @@ function CheckoutCart() {
                 <ul className="-my-8">
                   <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                     <div className="shrink-0 relative">
-                      {cart.map((product, index) => (
-                        <div key={index}>
-                          <img
-                            className="h-28 w-34 max-w-full rounded-lg object-cover"
-                            src={
-                              import.meta.env.VITE_STRAPI_UPLOAD_URL +
-                              product.data.attributes?.Image?.data?.attributes
-                                ?.url
-                            }
-                            alt=""
-                          />
-                          <div className="relative flex flex-1 flex-col justify-between">
-                            <div className="sm:col-gap-5 sm:grid sm:grid-cols-2">
-                              <div className="pr-8 sm:pr-5">
-                                <p className="text-base font-semibold text-gray-900">
-                                  {product.data.attributes?.Title}
-                                </p>
-                                <p className="mx-0 mt-1 mb-0 text-sm text-gray-400">
-                                  {product.data.attributes?.Description}
-                                </p>
-                              </div>
-                              <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
-                                <p className="shrink-0 w-20 text-base font-semibold text-gray-900 sm:order-2 sm:ml-8 sm:text-right">
-                                  {product.data.attributes?.Price} SEK
-                                </p>
+                      {cart.map((product, index) => {
+                        console.log(index);
+                        return (
+                          <div key={index}>
+                            <div className="flex justify-end">
+                              <button
+                                onClick={() =>
+                                  removeProductFromCart(
+                                    product.id
+                                  )
+                                }
+                              >
+                                <strong>X</strong>
+                              </button>
+                            </div>
+                            <img
+                              className="h-28 w-34 max-w-full rounded-lg object-cover"
+                              src={
+                                import.meta.env.VITE_STRAPI_UPLOAD_URL +
+                                product.data.attributes?.Image?.data?.attributes
+                                  ?.url
+                              }
+                              alt=""
+                            />
+
+                            <div className="relative flex flex-1 flex-col justify-between">
+                              <div className="sm:col-gap-5 sm:grid sm:grid-cols-2">
+                                <div className="pr-8 sm:pr-5">
+                                  <p className="text-base font-semibold text-gray-900">
+                                    {product.data.attributes?.Title}
+                                  </p>
+                                  <p className="mx-0 mt-1 mb-0 text-sm text-gray-400">
+                                    {product.data.attributes?.Description}
+                                  </p>
+                                </div>
+                                <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
+                                  <p className="shrink-0 w-20 text-base font-semibold text-gray-900 sm:order-2 sm:ml-8 sm:text-right">
+                                    {product.data.attributes?.Price} SEK
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </li>
                 </ul>
@@ -67,7 +82,7 @@ function CheckoutCart() {
                   </p>
                 </div>
                 <div className="mt-6 text-center">
-                    <Link to="/confirmation">
+                  <Link to="/confirmation">
                     <button
                       type="button"
                       className="group inline-flex items-center justify-center rounded-md bg-orange-500 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
@@ -88,8 +103,7 @@ function CheckoutCart() {
                         />
                       </svg>
                     </button>
-                    </Link>
-
+                  </Link>
                 </div>
               </div>
             </div>
