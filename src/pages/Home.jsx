@@ -7,10 +7,11 @@ function Home() {
   return (
     <>
       <div>
-        <h1 className="text-3xl font-poppins mt-8 flex justify-center">
+        <img src="src\assets\HERO.avif" alt="" className="w-full relative"/>
+        <h1 className="text-3xl font-poppins mt-8 flex justify-center absolute inset-x-0 top-32">
           Välkommen till TV-Specialisterna
         </h1>
-        <p className="flex justify-center text-lg mt-2">
+        <p className="flex justify-center font-poppins text-lg mt-2 absolute inset-x-0 top-52">
           Din Destination för Kvalitativa TV-upplevelser
         </p>
       </div>

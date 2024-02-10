@@ -10,8 +10,7 @@ const Checkout = () => {
   const [address, setAddress] = useState("");
   const [creditCardNumber, setCreditCardNumber] = useState("");
   const [creditCardOwner, setCreditCardOwner] = useState("");
-  const [creditCardDateMonth, setCreditCardDateMonth] = useState("");
-  const [creditCardDateYear, setCreditCardDateYear] = useState("");
+  const [creditCardDate, setCreditCardDate] = useState("");
   const [creditCardCVV, setCreditCardCVV] = useState("");
   const [postalCode, setPostalCode] = useState("");
 
@@ -37,11 +36,8 @@ const Checkout = () => {
   const handleCreditCardOwner = (e) => {
     setCreditCardOwner(e.target.value);
   };
-  const handleCreditCardDateMonth = (e) => {
-    setCreditCardDateMonth(e.target.value);
-  };
-  const handleCreditCardDateYear = (e) => {
-    setCreditCardDateMonth(e.target.value);
+  const handleCreditCardDate = (e) => {
+    setCreditCardDate(e.target.value);
   };
   const handleCreditCardCVV = (e) => {
     setCreditCardCVV(e.target.value);
@@ -71,6 +67,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     id="firstName"
+                    placeholder="Förnamn"
                     value={firstName}
                     onChange={handleFirstNameChange}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -87,6 +84,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     id="lastName"
+                    placeholder="Efternamn"
                     value={lastName}
                     onChange={handleLastNameChange}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -120,6 +118,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     id="address"
+                    placeholder="Adress"
                     value={address}
                     onChange={handleAddress}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -155,9 +154,11 @@ const Checkout = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="1234 5678 9123 4567"
+                    placeholder="XXXX XXXX XXXX XXXX"
                     maxLength="19"
                     id="creditCardNumber"
+                    pattern="[0-9]{13,16}"
+                    inputmode="numeric"
                     value={creditCardNumber}
                     onChange={handleCreditCardNumber}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -181,7 +182,7 @@ const Checkout = () => {
                     required
                   />
                 </div>
-                <div className="flex p-3 space-x-10">
+                <div className="flex p-3 space-x-10" >
                   <div className="mb-4 pl-5">
                     <div>
                     <label
@@ -192,21 +193,14 @@ const Checkout = () => {
                     </label>
                       <input
                         type="text"
-                        placeholder="MM"
+                        placeholder="MM/YY"
                         id="creditCardDateMonth"
-                        value={creditCardDateMonth}
-                        onChange={handleCreditCardDateMonth}
+                        inputmode="numeric"
+                        value={creditCardDate}
+                        onChange={handleCreditCardDate}
                         className="mt-1 p-2 border rounded-md w-full"
+                        maxLength={5}
                         required
-                      />
-                    <input 
-                        type="text"
-                        placeholder="YY"
-                        id="creditCardDateYear"
-                        value={creditCardDateYear}
-                        onChange={handleCreditCardDateYear}
-                        className="mt-1 p-2 border rounded-md w-full"
-                        required 
                       />
                     </div>
                   </div>
@@ -222,6 +216,7 @@ const Checkout = () => {
                       maxLength="3"
                       placeholder="XXX"
                       id="creditCardCVV"
+                      inputmode="numeric"
                       value={creditCardCVV}
                       onChange={handleCreditCardCVV}
                       className="mt-1 p-2 border rounded-md w-full"

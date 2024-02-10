@@ -28,18 +28,18 @@ const Products = () => {
     <div className="px-10 flex mt-12 ml-12">
       <div className="flex-1 sticky top-12 h-full">
         <div className="mb-8 ">
-          <h2 className="font-bold mb-5">Product Categories</h2>
+          <h2 className="font-bold mb-5 font-poppins">Product Categories</h2>
           <div className="mb-3">
             <input type="checkbox" id="1" value={1} onChange={handleChange} />
-            <label htmlFor="1">Standard</label>
+            <label htmlFor="1" className="font-poppins">Standard</label>
           </div>
           <div className="mb-3">
             <input type="checkbox" id="2" value={2} onChange={handleChange} />
-            <label htmlFor="2">Budget</label>
+            <label htmlFor="2" className="font-poppins">Budget</label>
           </div>
           <div className="mb-3">
-            <input type="checkbox" id="3" value={3} onChange={handleChange} />
-            <label htmlFor="3">Premium</label>
+            <input type="checkbox" id="3" value={3} onChange={handleChange} className=""/>
+            <label htmlFor="3" className="font-poppins">Premium</label>
           </div>
         </div>
       </div>
