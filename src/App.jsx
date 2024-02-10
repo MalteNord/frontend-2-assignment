@@ -23,23 +23,31 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addProductToCart = (item) => {
-    setCart([...cart, item]);
-    console.log("Added", { item });
+    const existingProductIndex = cart.findIndex((product) => product.data.id === item.data.id);
+  
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingProductIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
   };
 
-  const removeProductFromCart = (productId) => {
-    const updatedCart = cart.filter((item) => item.data.attributes?.id !== productId);
+  const addProductAmount = (productId) => { 
+    const updatedCart = cart.filter((product) => product.data.id !== productId);
+    setCart(updatedCart);
+  };
+
+  const removeProductAmount = (productId) => { 
+    const updatedCart = cart.filter((product) => product.data.id !== productId);
     setCart(updatedCart);
   };
   
-  
-  
-  
-
   return (
     <>
       <Router>
-        <CartContext.Provider value={{ cart, setCart, addProductToCart, removeProductFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, addProductToCart, addProductAmount, removeProductAmount }}>
           <Header />
           <Routes>
           <Route exact path="/confirmation" element={<Confirmation />} />

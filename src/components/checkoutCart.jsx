@@ -3,10 +3,10 @@ import { CartContext } from "../App";
 import { Link } from "react-router-dom";
 
 function CheckoutCart() {
-  const { cart, removeProductFromCart } = useContext(CartContext);
+  const { cart, addProductAmount, removeProductAmount } = useContext(CartContext);
 
   const totalPrice = cart.reduce((acc, product) => {
-    return acc + parseFloat(product.data.attributes?.Price);
+    return acc + parseFloat(product.data.attributes?.Price) * product.quantity;
   }, 0);
 
   return (
@@ -23,19 +23,20 @@ function CheckoutCart() {
                   <li className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                     <div className="shrink-0 relative">
                       {cart.map((product, index) => {
-                        console.log(index);
                         return (
                           <div key={index}>
                             <div className="flex justify-end">
+                              <div>Quantity: {product.quantity}</div>
                               <button
                                 onClick={() =>
-                                  removeProductFromCart(
-                                    product.id
-                                  )
+                                  removeProductAmount(product.quantity--)
                                 }
                               >
-                                <strong>X</strong>
-                              </button>
+                                <strong>-</strong>
+                                </button>
+                                <button onClick={() =>
+                                  addProductAmount(product.quantity++)
+                                }>+</button>
                             </div>
                             <img
                               className="h-28 w-34 max-w-full rounded-lg object-cover"
@@ -59,7 +60,7 @@ function CheckoutCart() {
                                 </div>
                                 <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
                                   <p className="shrink-0 w-20 text-base font-semibold text-gray-900 sm:order-2 sm:ml-8 sm:text-right">
-                                    {product.data.attributes?.Price} SEK
+                                  {product.data.attributes?.Price} SEK
                                   </p>
                                 </div>
                               </div>
